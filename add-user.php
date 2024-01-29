@@ -1,6 +1,6 @@
 <!-- 新增 會員 ui -->
 <?php
-require_once("./connect.php");
+require_once "./connect.php";
 ?>
 
 <!doctype html>
@@ -12,12 +12,12 @@ require_once("./connect.php");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <?php
-    include("../css.php");
-    ?>
+include "./css.php";
+?>
 </head>
 
 <body>
-    
+
 <div class="container">
         <form action="doAddUser.php" method="post">
             <div class="mt-2">
@@ -41,15 +41,15 @@ require_once("./connect.php");
                 </label>
                 <input type="number" class="form-control" name="phone">
             </div>
-            
+
             <div class="mt-2">
             <button type="submit" class="btn btn-primary">送出</button>
             </div>
         </form>
     </div>
     <?php
-    include("../js.php");
-    ?>
+include "./js.php";
+?>
 </body>
 
 </html>

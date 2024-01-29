@@ -1,17 +1,17 @@
 <!-- 會員個人 ui -->
 <?php
-if(!isset($_GET["id"])){
-    $id=0;
-}else{
-    $id=$_GET["id"];  
+if (!isset($_GET["id"])) {
+    $id = 0;
+} else {
+    $id = $_GET["id"];
 }
-require_once("./connect.php");
-$sql="SELECT * FROM member WHERE id=$id AND valid=1";
-$result=$conn->query($sql);
-$rowCount=$result->num_rows;
+require_once "./connect.php";
+$sql = "SELECT * FROM member WHERE id=$id AND valid=1";
+$result = $conn->query($sql);
+$rowCount = $result->num_rows;
 
-if($rowCount!=0){
-    $row=$result ->fetch_assoc();  
+if ($rowCount != 0) {
+    $row = $result->fetch_assoc();
 }
 ?>
 <!doctype html>
@@ -26,8 +26,8 @@ if($rowCount!=0){
         />
 
         <?php
-       include("../css.php");
-       ?>
+include "./css.php";
+?>
     </head>
 
     <body>
@@ -51,7 +51,7 @@ if($rowCount!=0){
     </div>
   </div>
 </div>
-        
+
         <div class="container">
             <div class="py-2">
                 <a
@@ -62,13 +62,13 @@ if($rowCount!=0){
                     role="button"
                     > <i class="fa-solid fa-arrow-left"></i> 回使用者列表</a
                 >
-                
+
             </div>
-        <?php if($rowCount == 0) : ?>
+        <?php if ($rowCount == 0): ?>
             使用者不存在
-            <?php else :
-               
-                ?>
+            <?php else:
+
+?>
             <table class="table table-bordered">
                 <tr>
                  <td>ID</td>
@@ -116,7 +116,7 @@ if($rowCount!=0){
                     role="button"
                     ><i class="fa-solid fa-user-pen"></i></a>
                     <button
-                    data-bs-toggle="modal" 
+                    data-bs-toggle="modal"
                     data-bs-target="#confirmModal"
                     class="btn btn-danger"
                     href="userDelete.php?id=<?=$row["id"]?>"
@@ -126,7 +126,7 @@ if($rowCount!=0){
             <?php endif;?>
         </div>
         <?php
-       include("../js.php");
-       ?>
+include "./js.php";
+?>
     </body>
 </html>

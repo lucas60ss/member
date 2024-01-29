@@ -1,3 +1,4 @@
+
 <!-- 會員資料列表 ui -->
 <?php
 require_once "./connect.php";
@@ -365,7 +366,7 @@ if (isset($_GET["search"])) {
             <div class="mb--5">
                 共 <?=$userCount?> 人
             </div>
-            <!-- 共多少人、新增人數 -->
+            <!-- 新增刪除會員管理icon-->
             <div class="d-flex justify-content-between">
             <div class="mb-2">
                 <a name="" id="" class="btn btn-danger" href="add-user.php" role="button"><i class="fa-solid fa-user-minus"></i></a>
